@@ -1,0 +1,23 @@
+# Import necessary libraries
+import pandas as pd
+
+# Set the index to the Nifty 50 stocks
+nifty_50 = ["HDFC Bank", "Hindustan Unilever", "Reliance Industries", "ITC", "Tata Consultancy Services", 
+            "HDFC", "Infosys", "ICICI Bank", "Bharti Airtel", "Kotak Mahindra Bank", 
+            "Larsen & Toubro", "Axis Bank", "SBI", "Tata Steel", "Maruti Suzuki", 
+            "ONGC", "Power Grid Corporation of India", "NTPC", "Coal India", "Bajaj Finserv", 
+            "Bajaj Auto", "HCL Technologies", "Hero MotoCorp", "Tata Motors", "UltraTech Cement", 
+            "Sun Pharmaceutical Industries", "Tech Mahindra", "Eicher Motors", "Bajaj Finance", 
+            "Tata Chemicals", "Tata Power", "BPCL", "Tata Motors (DVR)", "Indian Oil Corporation", 
+            "Hindalco Industries", "Wipro", "GAIL (India)", "Zee Entertainment Enterprises", 
+            "JSW Steel", "Shree Cement", "Bajaj Holdings & Investment", "NMDC", "Grasim Industries", 
+            "JSW Energy", "UPL", "Cipla", "Adani Ports and Special Economic Zone", "Vedanta"]
+
+# Load stock data into a DataFrame
+stocks = pd.read_csv("nifty_50_stocks.csv")
+
+# Filter the DataFrame to only include stocks that meet certain criteria
+filtered_stocks = stocks[(stocks["price"] > 1000) & (stocks["market_cap"] > 5000000000)]
+
+# Print the filtered stocks
+print(filtered_stocks)
